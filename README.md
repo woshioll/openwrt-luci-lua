@@ -92,3 +92,5 @@ call方式：会调用本文件或者导入文件的函数
 
 scanf(控制字符，地址列表) 
 格式字符的含义同printf函数，地址列表是由若干个地址组成的表列，可以是变量的地址，或字符串的首地址。如scanf("％d％c％s",&a,&b,str)；
+
+luci中view的html引用css，js方法是<script type="text/javascript" src="<%=resource%>/cbi.js"></script>//<link rel="stylesheet" type="text/css" media="screen" href="<%=media%>/cascade.css" />
