@@ -177,23 +177,6 @@
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown div {
     border-bottom: 1px solid #6e6d6d;
 }
-.sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after {
-        content: "\f105";
-        font-family: FontAwesome;
-        font-weight: 400;
-        font-style: normal;
-        display: inline-block;
-        text-align: center;
-        text-decoration: none;
-        background: 0 0;
-        speak: none;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        position: absolute;
-        right: 15px;
-        top: 10px;
-
-}
 .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
         padding: 5px 0;
 }
