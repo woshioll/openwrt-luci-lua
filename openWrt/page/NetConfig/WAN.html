@@ -1,0 +1,203 @@
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>WAN口配置</title>
+		<link rel="stylesheet" href="../../src/css/jquery.mCustomScrollbar.min.css">
+		<link rel="stylesheet" href="../../src/css/custom.css">
+		<link rel="stylesheet" href="../../src/css/demo.css">
+		<link rel="stylesheet" href="../../src/css/normalize.css">
+		<link rel="stylesheet" href="../../src/css/bootstrap.min.css">
+
+		<script src="../../src/js/jquery-1.11.0.min.js"></script>
+		<script src="../../src/js/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="../../src/js/bootstrap.min.js"></script>
+		<script src="../../src/js/custom.js"></script>
+		<style type="text/css">
+			#container {
+				padding: 20px;
+			}
+			
+			.col-sm-offset-2 {
+				text-align: center;
+			}
+			
+			#sys {
+				margin-bottom: 33px;
+			}
+			
+			#sys>a {
+				font-size: 24px;
+				color: #5b5b5b;
+			}
+			
+			.dropdown-menu li {
+				width: 290px;
+				text-align: center;
+			}
+			
+			#DHCP {
+				display: none;
+			}
+			
+			#STATIC {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container" class="container">
+			<div id="sys">
+				<span class="tt"></span>
+				<a href="#">WAN口设置</a>
+			</div>
+			<form class="form-horizontal">
+				<div class="form-group dropdown">
+					<label for="inputPassword3" class="col-sm-2 control-label">WAN口连接类型:</label>
+					<div class="col-sm-3">
+						<button class="btn btn-default dropdown-toggle form-control" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					    <span id="wanValue">
+					    	PPPoE
+					    </span>
+					  <span class="caret"></span>
+					</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li id="pppoe">
+								<a href="#">PPPoE</a>
+							</li>
+							<li id="dhcp">
+								<a href="#">DHCP</a>
+							</li>
+							<li id="static">
+								<a href="#">STATIC</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div id="PPPoE">
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">PPPoE连接:</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" onkeyup="testIp(this)" value="192.168.88.100">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">上网账号:</label>
+						<div class="col-sm-3">
+							<div class="input-group">
+								<input type="text" class="form-control" aria-describedby="basic-addon2" value="2000">
+								<span class="input-group-addon" id="basic-addon2">分钟</span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">上网密码:</label>
+						<div class="col-sm-3">
+							<input type="password" class="form-control" value="192.168.88.1">
+						</div>
+					</div>
+				</div>
+
+				<div id="DHCP">
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">DHCP连接:</label>
+						<div class="col-sm-3">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">IP地址:</label>
+						<div class="col-sm-3">
+							<span>10.110.30.77</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">子网掩码:</label>
+						<div class="col-sm-3">
+							<span>255.255.255.0</span>
+
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">网关:</label>
+						<div class="col-sm-3">
+							<span>10.110.30.254</span>
+
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">DNS:</label>
+						<div class="col-sm-3">
+							<span>61.134.1.34</span><br>
+							<span>218.30.19.40</span>
+
+						</div>
+					</div>
+				</div>
+
+				<div id="STATIC">
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">DHCP连接:</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">IP地址:</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="RSLeasePer"  onkeyup="testIp(this)" value="10.110.30.77">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">子网掩码:</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" onkeyup="testIp(this)" value="255.255.255.0">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">网关:</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" onkeyup="testIp(this)" value="10.110.30.254">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">DNS:</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" onkeyup="testIp(this)" value="61.134.1.34">
+						</div>
+					</div>
+				</div>
+				<div class="form-group container">
+					<div class="col-sm-offset-2 col-sm-8">
+						<button type="button" class="btn btn-info" style="margin-right: 20px;">保存</button>
+						<button type="button" class="btn btn-info">取消</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			$('#static').click(function(){
+				$('#wanValue').html('STATIC');
+				$('#STATIC').show()
+				$('#DHCP').hide()
+				$('#PPPoE').hide()
+			})
+			$('#dhcp').click(function(){
+				$('#wanValue').html('DHCP');
+				$('#STATIC').hide()
+				$('#DHCP').show()
+				$('#PPPoE').hide()
+			})
+			$('#pppoe').click(function(){
+				$('#wanValue').html('PPPoE');
+				$('#STATIC').hide()
+				$('#DHCP').hide()
+				$('#PPPoE').show()
+			})
+		</script>
+	</body>
+
+</html>

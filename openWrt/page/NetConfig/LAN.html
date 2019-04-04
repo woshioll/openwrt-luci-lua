@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>LAN口配置</title>
+	<link rel="stylesheet" href="../../src/css/jquery.mCustomScrollbar.min.css">
+	<link rel="stylesheet" href="../../src/css/custom.css">
+	<link rel="stylesheet" href="../../src/css/demo.css">
+	<link rel="stylesheet" href="../../src/css/normalize.css">
+	<link rel="stylesheet" href="../../src/css/bootstrap.min.css">
+
+	<script src="../../src/js/jquery-1.11.0.min.js"></script>
+	<script src="../../src/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../../src/js/bootstrap.min.js"></script>
+	<script src="../../src/js/custom.js"></script>
+	<script src="../../src/js/content.js"></script>
+</head>
+
+<body>
+	<style type="text/css">
+		#container {
+			padding: 20px;
+		}
+
+		.col-sm-offset-2 {
+			text-align: center;
+		}
+
+		#sys {
+			margin-bottom: 33px;
+		}
+
+		#sys>a {
+			font-size: 24px;
+			color: #5b5b5b;
+		}
+
+		.dropdown-menu li {
+			width: 290px;
+			text-align: center;
+		}
+	</style>
+	</head>
+
+	<body>
+		<div id="container" class="container">
+			<div id="sys">
+				<span class="tt"></span>
+				<a href="#">LAN口配置</a>
+			</div>
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">IP地址:</label>
+					<div class="col-sm-3">
+						<input type="text" id="LANIpAdd" class="form-control" onkeyup="testIp(this)"
+							value="192.168.88.1">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword3" class="col-sm-2 control-label">子网掩码:</label>
+					<div class="col-sm-3">
+						<button class="btn btn-default dropdown-toggle form-control" type="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<span id="lanValue">
+								255.255.255.0
+							</span>
+							<span class="caret"></span>
+						</button>
+						<ul id="lanUl" class="dropdown-menu" aria-labelledby="dropdownMenu1"></ul>
+					</div>
+				</div>
+				<div class="form-group container">
+					<div class="col-sm-offset-2 col-sm-8">
+						<button type="button" class="btn btn-info" style="margin-right: 20px;">保存</button>
+						<button type="button" id="qx" class="btn btn-info">取消</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$('#lanUl a').click(function(){
+					$('#lanValue').hmtl = this.html;
+				})
+			})
+			GetAjax('', '', function (data) {
+				$('#LANIpAdd').val(data.IP)
+				var ulLi = '';
+				ulLi += '<li><a href="#">' + data.netmask + '</a></li>'
+				$('#lanUl').html(ulLi)
+			})
+		</script>
+	</body>
+
+</html>

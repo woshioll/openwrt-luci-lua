@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>LAN口配置</title>
+		<link rel="stylesheet" href="../src/css/jquery.mCustomScrollbar.min.css">
+		<link rel="stylesheet" href="../src/css/custom.css">
+		<link rel="stylesheet" href="../src/css/demo.css">
+		<link rel="stylesheet" href="../src/css/normalize.css">
+		<link rel="stylesheet" href="../src/css/bootstrap.min.css">
+
+		<script src="../src/js/jquery-1.11.0.min.js"></script>
+		<script src="../src/js/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="../src/js/bootstrap.min.js"></script>
+		<script src="../src/js/custom.js"></script>
+	</head>
+
+	<body>
+		<style type="text/css">
+			#container {
+				padding: 20px;
+			}
+			
+			#sys {
+				margin-bottom: 33px;
+			}
+			
+			#sys>a {
+				font-size: 24px;
+				color: #5b5b5b;
+			}
+			
+			.table td,
+			th {
+				text-align: center;
+			}
+			
+			.col-sm-offset-2 {
+				text-align: center;
+			}
+		</style>
+		</head>
+
+		<body>
+			<div id="container" class="container">
+				<div id="sys">
+					<span class="tt"></span>
+					<a href="#">路由信息</a>
+				</div>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Network</th>
+							<th>Target</th>
+							<th>Getway</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>wan</td>
+							<td>0.0.0.0/0</td>
+							<td>10.110.30.254</td>
+						</tr>
+						<tr>
+							<td>wan</td>
+							<td>10.110.30.0/24</td>
+							<td>0.0.0.0</td>
+						</tr>
+						<tr>
+							<td>lan</td>
+							<td>192.168.88.0/24</td>
+							<td>0.0.0.0</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="form-group container">
+					<div class="col-sm-offset-2 col-sm-8">
+						<button type="button" class="btn btn-info" style="margin-right: 20px;">增加</button>
+						<button type="button" class="btn btn-info">删除</button>
+					</div>
+				</div>
+			</div>
+		</body>
+
+</html>

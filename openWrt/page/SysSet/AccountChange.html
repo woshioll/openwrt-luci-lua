@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>修改登陆口令</title>
+		<link rel="stylesheet" href="../../src/css/jquery.mCustomScrollbar.min.css">
+		<link rel="stylesheet" href="../../src/css/custom.css">
+		<link rel="stylesheet" href="../../src/css/demo.css">
+		<link rel="stylesheet" href="../../src/css/normalize.css">
+		<link rel="stylesheet" href="../../src/css/bootstrap.min.css">
+
+		<script src="../../src/js/jquery-1.11.0.min.js"></script>
+		<script src="../../src/js/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="../../src/js/bootstrap.min.js"></script>
+		<script src="../../src/js/custom.js"></script>
+	</head>
+
+	<body>
+		<style type="text/css">
+			#container {
+				padding: 20px;
+			}
+			
+			.col-sm-offset-2 {
+				text-align: center;
+			}
+			
+			.dropdown-menu li {
+				width: 360px;
+				text-align: center;
+			}
+			input{
+				text-align: center;
+			}
+			.btn{
+				padding: 6px 20px;
+			}
+		</style>
+		</head>
+
+		<body>
+			<div class="panel panel-warning">
+				<div class="panel-heading">
+					<span class="tt"></span>
+					修改登陆口令
+				</div>
+				<form class="form-horizontal panel-body">
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-5">本页修改系统管理员的口令，长度为6-15位。</label>
+					</div>
+
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">原口令:</label>
+						<div class="col-sm-3">
+							<input type="text" id="old" class="form-control" value="">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">新口令:</label>
+						<div class="col-sm-3">
+							<input type="text" id="new" class="form-control" value="">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">确认新口令:</label>
+						<div class="col-sm-3">
+							<input type="text" id="connew" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group container">
+						<div class="col-sm-offset-2 col-sm-8">
+							<button type="button" class="btn btn-info" style="margin-right: 40px">保存</button>
+							<button type="button" class="btn btn-info">清空</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</body>
+		<script type="text/javascript">
+		    $(document).keyup(function () {  
+				if($('#connew').val() != $('#new').val()){
+					$('#connew').parent().parent().addClass("has-error");
+		        }else{
+		            $('#connew').parent().parent().attr("class","form-group");
+		        };
+		    })
+		</script>
+</html>

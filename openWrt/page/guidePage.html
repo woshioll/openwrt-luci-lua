@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>openWrt</title>
+    <link rel="shortcut icon" href="../src/img/openWrt.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../src/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../src/css/custom.css">
+    <link rel="stylesheet" href="../src/css/demo.css">
+    <link rel="stylesheet" href="../src/css/normalize.css">
+    <link rel="stylesheet" href="../src/css/bootstrap.min.css">
+
+    <script src="../src/js/jquery-1.11.0.min.js"></script>
+    <script src="../src/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../src/js/bootstrap.min.js"></script>
+    <script src="../src/js/custom.js"></script>
+</head>
+<style>
+    body{
+        background: skyblue;
+    }
+    a{
+        color: #fff;
+    }
+    a:hover{
+        color: #fff;
+        text-decoration: none;
+    }
+    #main .main {
+        margin-top: 100px;
+        height: 400px;
+        background: #eee;
+        padding: 40px 20px;
+        border-radius: 10px;
+    }
+
+    #main .dropdown-toggle,
+    .form-control {
+        width: 305px;
+    }
+    .dropdown-menu li{
+        width: 330px;
+        text-align: center;
+    }
+    .btn-info{
+        width: 200px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+    <div id="main" class="container">
+        <div class="center-block main">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-5 control-label">接入模式：</label>
+                    <div class="col-sm-7">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            请选择接入模式
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a href="#">路由模式</a></li>
+                            <li><a href="#">桥接模式</a></li>
+                        </ul>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-5 control-label">上网方式：</label>
+                    <div class="col-sm-7">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            请选择上网方式
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a href="#">DHCP</a></li>
+                            <li><a href="#">桥接模式</a></li>
+                        </ul>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-5 control-label">SSID：</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" id="SSID">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-5 control-label">密码：</label>
+                    <div class="col-sm-7">
+                        <input type="password" class="form-control" id="GPPassworld">
+                    </div>
+                </div><br>
+            </form><br>
+            <div class="center-block">
+                <div class="col-sm-6">
+                    <a href="./main.html"><button type="button" class="btn btn-info center-block">保存</button></a>
+                </div>
+                <div class="col-sm-6">
+                    <button type="button" class="btn btn-info center-block">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- http://10.110.30.122:8000/cgi-bin/cgi.cgi?/app/route/network/lan -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>openWrt</title>
+    <link rel="shortcut icon" href="../src/img/openWrt.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../src/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../src/css/custom.css">
+    <link rel="stylesheet" href="../src/css/demo.css">
+    <link rel="stylesheet" href="../src/css/normalize.css">
+    <link rel="stylesheet" href="../src/css/bootstrap.min.css">
+
+    <script src="../src/js/jquery-1.11.0.min.js"></script>
+    <script src="../src/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../src/js/bootstrap.min.js"></script>
+    <script src="../src/js/custom.js"></script>
+    <style>
+        .header-menu {
+            text-align: center;
+        }
+
+        #toggle-sidebar {
+            display: inline-block;
+            width: 34px;
+            height: 66px;
+            background: #5b5b5b;
+            color: #fff;
+            padding: 10px;
+            position: absolute;
+            left: 292px;
+            top: 350px;
+            border-radius: 4px;
+        }
+
+        .sidebar-menu #line {
+            width: 260px;
+            margin-left: 20px;
+            border-bottom: 1px solid #6E6D6D;
+        }
+
+        .sidebar-menu ul li a span {
+            font-size: 24px
+        }
+
+        .header-menu {
+            line-height: 80px;
+        }
+		.sidebar-menu>ul>li{
+			line-height:52px;
+		}
+        .sidebar-submenu ul li{
+			line-height:46px;
+		}
+        .sidebar-submenu ul li a {
+            font-size: 18px;
+        }
+
+        .sidebar-submenu>ul>li>a:hover {
+            background-color: #1DA4F0;
+            color: #fff;
+        }
+
+        .sidebar-menu a:hover {
+            background-color: #1DA4F0;
+        }
+
+        .sidebar-menu li:hover span {
+            color: #fff;
+        }
+        .page-content iframe{
+            min-height: 600px;
+            padding: 15px 0 0 55px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Mmain" class="page-wrapper toggled">
+    <nav class="navbar navbar-default nav-lk navbar-static-top">
+        <div class="container">
+            <div class="navbar-header" style="height:80px;">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style="margin-top:22px;">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="padding-left:20px;"><img src="../src/img/logo.png"></img></a>
+                <a class="navbar-brand hidden-xs" href="#" style="padding-top: 28px;"><i
+                        style="display:inline-block; width:1px; height:20px; background-color:#227FC4;"></i></a>
+                <a class="navbar-brand hidden-xs" href="#"
+                    style="color:#227fc4;padding-top:28px">版本型号:<span>123123</span></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right" style="padding-top:14px;">
+                    <li><a href="./guidePage.html"><button class="btn btn-primary">引导页面</button></a></li>
+                    <li><a href="./login.html"><button class="btn btn-primary">退出登陆</button></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <a href="#" id="toggle-sidebar">菜单</a>
+            <div class="sidebar-content">
+                <div class="sidebar-menu">
+                    <ul>
+                        <li class="header-menu" style="height:80px;"><img src="../src/img/logo.png" alt=""></li>
+                        <div id="line"></div>
+                        <li>
+                            <a href="#" onclick="srcChange('runStatus.html'),remoCla()"><i class="fa fa-bar-chart-o"></i><span>运行状态</span></a>
+                            <div id="line"></div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#"><i class="fa fa-photo"></i><span>网络配置</span></a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a onclick="srcChange('NetConfig/WAN.html'),remoCla()" href="#">WAN口配置</a></li>
+                                    <li><a onclick="srcChange('NetConfig/LAN.html'),remoCla()" href="#">LAN口配置</a></li>
+                                    <li><a onclick="srcChange('NetConfig/WIFI.html'),remoCla()" href="#">WIFI配置</a></li>
+                                    <li><a onclick="srcChange('NetConfig/DHCP.html'),remoCla()" href="#">DHCP配置</a></li>
+                                </ul>
+                            </div>
+                            <div id="line"></div>
+                        </li>
+                        <li>
+                            <a href="#" onclick="srcChange('RoutSet.html'),remoCla()"><i class="fa fa-bar-chart-o"></i><span>路由设置</span></a>
+                            <div id="line"></div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#"><i class="fa fa-diamond"></i><span>系统设置</span></a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a onclick="srcChange('SysSet/DiagTools.html'),remoCla()" href="#">诊断工具</a></li>
+                                    <li><a onclick="srcChange('SysSet/UpGrade.html'),remoCla()" href="#">软件升级</a></li>
+                                    <li><a onclick="srcChange('SysSet/AccountChange.html'),remoCla()" href="#">账号修改</a></li>
+                                    <li><a onclick="srcChange('SysSet/FactoryFatReset.html'),remoCla()" href="#">恢复出厂设置</a></li>
+                                    <li><a onclick="srcChange('SysSet/Restart.html'),remoCla()" href="#">路由器重启</a></li>
+                                </ul>
+                            </div>
+                            <div id="line"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+        <main id="mainIframe" class="page-content">
+            <iframe class="container" src="runStatus.html" frameborder="0" scrolling="no"></iframe>
+        </main>
+    </div>
+    <script type="text/javascript">
+    	if (screen.width < 768) {
+    		remoCla()
+    	}
+        function srcChange(obj){
+            $("body", parent.document).find('iframe').attr('src',obj);
+        }
+        function remoCla(){
+            if (screen.width < 768) {
+                $('#Mmain').removeClass('toggled')
+            }
+        }
+    </script>
+</body>
+
+</html>

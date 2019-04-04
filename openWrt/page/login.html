@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>openWrt</title>
+    <link rel="shortcut icon" href="../src/img/openWrt.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="../src/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../src/css/custom.css">
+    <link rel="stylesheet" href="../src/css/demo.css">
+    <link rel="stylesheet" href="../src/css/normalize.css">
+    <link rel="stylesheet" href="../src/css/bootstrap.min.css">
+
+    <script src="../src/js/jquery-1.11.0.min.js"></script>
+    <script src="../src/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../src/js/bootstrap.min.js"></script>
+    <script src="../src/js/custom.js"></script>
+</head>
+<style>
+    body {
+        background: skyblue;
+    }
+    a{
+        color: #fff;
+    }
+    a:hover{
+        color: #fff;
+        text-decoration: none;
+    }
+    #main .center-block {
+        width: 340px;
+        margin-top: 300px;
+    }
+
+    @media all and (max-width:768px) {
+        #main .center-block {
+            margin-top: 100px;
+        }
+    }
+
+    #main .center-block .form-group input {
+        background: rgba(255, 255, 255, 0.5);
+        padding: 20px 0;
+        padding: 10px;
+    }
+
+    #main .btn-block {
+        width: 300px;
+        margin-left: 20px;
+    }
+
+    .glyphicon {
+        color: #eee;
+    }
+</style>
+
+<body>
+    <div id="main" class="container">
+        <div class="center-block">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-1 control-label"><span class="glyphicon glyphicon-user"
+                            aria-hidden="true"></span></label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="userName" placeholder="用户名">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-1 control-label"><span
+                            class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></label>
+                    <div class="col-sm-11">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="密码">
+                    </div>
+                </div>
+            </form><br>
+            <a href="./guidePage.html"><button type="button" class="btn btn-primary btn-lg btn-block">登陆</button></a>
+        </div>
+    </div>
+</body>
+
+</html>
